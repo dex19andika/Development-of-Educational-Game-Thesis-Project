@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Belajar Aksara Bali</title>
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Still in Beta &hearts;" />
+    <meta
+      name="description"
+      content="Handwritten digit Recognition Application"
+    />
+    <meta
+      name="keywords"
+      content="Tensorflow, Deep learning, MNIST, Handwritten Digit, Web Application"
+    />
+    <!-- modal -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v3.0.6/css/line.css"
+    />
+
+    <!-- GoogleFont -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Calistoga|Josefin+Sans:400,700|Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100;400&family=Source+Sans+Pro:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/b3aed9cb07.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <link rel="icon" href="favicon.ico" />
+  </head>
+
+  <body style="background-image: url('bg.png'); background-size: 100%;" onload="init()">
+
+    <section id="title">
+      <h1 class="heading">Bagaimana kemampuanmu?</h1>
+      <hr>
+    </section>
+
+    <section id="content">
+      <!-- Modal -->
+
+      <div class="popup" id="modalku">
+        <header>
+          <span id='judul-result'>Hasil Mu!</span>
+          <div class="close"><i class="uil uil-times"></i></div>
+        </header>
+        <div class="content">
+          <p class="input-result" id="input-result">Pengujian Input Aksara</p>
+          <!-- <p id="">Bagikan Aplikasi Ini!</p>
+          <ul class="icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-telegram-plane"></i></a> -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="row"></div>
+      <div class="canvasapp">
+        <div class="row">
+          <div class="leftside">
+            <h2 id="level">Level -</h2>
+            <h2 id="ronde">Ronde -</h2>
+            <div class="">
+              <canvas id="canvas-box" height="200" width="200"> </canvas>
+            </div>
+            <div class="sub-title">
+              <h2 class="aksaraHeading" id="aksara-heading">--</h2>
+            </div>
+            <div class="buttons-wrap">
+              <button class="button" id="generate-aksara">Mulai</button>
+              <button class="button view-modal" id="predict-canvas" disabled>
+                Cek Hasil
+              </button>
+              <button class="button" id="clear-canvas" disabled>Hapus</button>
+            </div>
+          </div>
+          <!-- <div class="predicted_output col-sm-5"></div> -->
+          <div class="predicted_output col-sm-3">
+            <h2 id="prediction_heading">Hasil Mu</h2>
+            <p id="result">-</p>
+            <p id="confidence">-</p>
+            <!-- <a href="/">
+              <button class="button back-btn" id="">Kembali ke Home</button>
+            </a> -->
+          </div>
+          <div class="predicted_output col-sm-3">
+            <h2 id="prediction_heading">Skor Mu</h2>
+            <h1 id="skor">-</h1>
+            <a href="/">
+              <button class="button back-btn" id="">Kembali ke Home</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="js/app.js" charset="utf-8"></script>
+  </body>
+</html>
